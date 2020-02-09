@@ -6,9 +6,9 @@ This repository is built using Webpack and babel7, using React, React-router, RE
 
 To get started start from the root folder and perform:
 
-##Setup Instructions:
+## Setup Instructions:
 
-### Start from the root directory
+Starting from the root directory
 
 ### `npm install`
 
