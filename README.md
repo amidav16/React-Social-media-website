@@ -24,7 +24,7 @@ solution to the exam, due to lack of time this is the best result i could produc
 
 Below is a long list of requirements i have done:
 
-Requirements That HAVE and HAVE NOT been done:
+## Requirements That HAVE and HAVE NOT been done:
 
 Submitted as zip file? Yes
 
@@ -70,7 +70,7 @@ Necessary but not sufficient requirements to get at least a B:
 
 Add WebSockets to your app, with the frontend using it: No
 
-Application Requirements Done/Not Done:
+## Application Requirements Done/Not Done:
 
 (Grade E-D) A visitor of the page should be able to see the menu for the week. DONE
 
