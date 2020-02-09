@@ -2,7 +2,11 @@
 
 
 ## Summary
-This repository is built using Webpack and babel7, using React, React-router, REST api and
+This repository is built using html/css, Javascript, Webpack and babel7, using SPA (React), SPA Routing and REST api.
+Note that there has been no tests done, therefore the ./tests folder will be empty.
+
+The focus of this application is to show all the techniques i've learned through class and show my understanding towards them.
+Additionally i've utilized bootstrap's css to show my understanding of stylization, however i'm aware the course is not frontend focused.
 
 To get started start from the root folder and perform:
 
@@ -15,12 +19,10 @@ Starting from the root directory
 ### `npm run dev`
 
 npm run dev will create a **bundle.js** file at the ./public folder
-and starts the backend server at port 8080  
+and starts a **single NodeJS instance serving both the frontend and backend** , at server port 8080.
+The application will also reload using nodemon everytime a change has been made.
 
-Small parts of this code has been used to achieve the functions: 
-
-The focus of this application is to be within the passing grade requirements, i do believe i could have done way better to achieve a more sophisticated
-solution to the exam, due to lack of time this is the best result i could produce.
+Small parts of this code has been used to achieve the functions: (github link if theres any) 
 
 Below is a long list of requirements i have done:
 
