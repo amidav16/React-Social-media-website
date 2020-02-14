@@ -16,9 +16,9 @@ To get started start from the root folder and perform:
 
 Starting from the root directory
 
-### `npm install`
+### `npm install OR yarn install`
 
-### `npm run dev`
+### `npm run dev OR yarn dev`
 
 ### `Open a browser and enter localhost:8080`
 
@@ -30,43 +30,35 @@ Small parts of this code has been used to achieve the functions: (GITHUB LINKS I
 
 Below is a long list of requirements i have done:
 
-## Requirements That HAVE and HAVE NOT been done:
+## Requirements That have been done in order to not get a straight F:
 
-Submitted as zip file? Yes
+### `DONE`
 
-Use one server? Yes
+Submitted as zip file
+Use one server
+Followed Folder layout
+Submitted Acceptable Zip file
+Provided Readme.md
+Not Skipped instruction in the document
+No Bugs?
+Home page accessible at http://localhost:8080
+Specifiy parts of exam that are not completed
 
-Followed Folder layout? Yes
+## Grade Requirements that HAVE and HAVE NOT been done:
 
-Submitted Acceptable Zip file? Yes
+### `DONE`
 
-Provided Readme.md? Yes
+Necessary but not sufficient requirements to get at least a (E - D) Grade
 
-Skipped instruction in the document? No
-
-Bugs? No
-
-Home page accessible at http://localhost:8080? Yes
-
-Specifiy parts of exam that are not completed? Yes
-
-Grade Requirements that HAVE and HAVE NOT been done:
-
-Necessary but not sufficient requirement to get at least an E mark for:
-
-Write a home page with React: Yes
-
-At least 2 other React pages that can be accessed via React-Router: Yes
-
+Write a home page with React
+At least 2 other React pages that can be accessed via React-Router
 At least one page should have some “state”, whose change should be triggerable from the GUI
 (i.e., there should be some actions for which a React component should be re-rendered and
-produce different HTML): Yes
+produce different HTML)
+Create a RESTful API handling at least one GET and one POST (besides the ones for authentication/authorization of users), using JSON.
+The frontend must use such API.
 
-Necessary but not sufficient requirements to get at least a D:
-
-Create a RESTful API handling at least one GET and one POST (besides the ones for authentication/authorization of users), using JSON: No
-
-The frontend must use such API: yes
+### `NOT DONE`
 
 Necessary but not sufficient requirements to get at least a C:
 
