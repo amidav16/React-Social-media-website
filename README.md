@@ -9,6 +9,7 @@ The focus of this application is to show all the techniques i've learned through
 Additionally i've utilized bootstrap's css to show my understanding of stylization, however i'm aware the course is not frontend focused.
 
 (Explain what project does, how it is structured and how i implemented it and which technologies i used, pitch sale) (EXPLAIN MY USE OF BABEL7)
+This project creates a social media website, it's structured in which we have 5 react routes, using navbar. When navigated to Users you can see a list of users and by pressing their names you can check their displayed information in a different page, there's also a friendship request button however it isn't functional. I used React-Router-dom for the navigation.
 
 To get started start from the root folder and perform:
 

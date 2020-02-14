@@ -2,7 +2,7 @@
 
 const data = [
   {
-    _id: 1,
+    id: 1,
     name: "Bob",
     surname: "Dyllan",
     description: "Hello Friends",
@@ -12,7 +12,7 @@ const data = [
     likeCount: 2
   },
   {
-    _id: 2,
+    id: 2,
     name: "Steve",
     surname: "England",
     description: "Your favorite scapegoat",
@@ -22,7 +22,7 @@ const data = [
     likeCount: 12
   },
   {
-    _id: 3,
+    id: 3,
     name: "Felix",
     surname: "Kjellberg",
     description: "Watch my videoes at youtube.com/pewdiepie",
@@ -32,7 +32,7 @@ const data = [
     likeCount: 71
   },
   {
-    _id: 4,
+    id: 4,
     name: "Dinkleberg",
     surname: "Stevenson",
     description: "Please like my profile!",
@@ -47,8 +47,8 @@ function getData() {
   return data;
 }
 
-function getUser(id) {
-  return data.find(m => m._id === id);
+function getUser(id_) {
+  return data.find(m => m.id === id_);
 }
 
 module.exports = { getData, getUser };

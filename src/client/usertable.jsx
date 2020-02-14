@@ -6,10 +6,7 @@ const UserTable = ({ onLike, items }) => {
     <table className="table">
       <thead>
         <tr>
-          <th>
-            <Link to={"/inspect?profileId=" + user._id} />
-            name
-          </th>
+          <th>Name</th>
           <th>Bio</th>
           <th>Email</th>
           <th>Likes</th>
@@ -18,8 +15,10 @@ const UserTable = ({ onLike, items }) => {
       </thead>
       <tbody>
         {items.map(user => (
-          <tr key={user._id}>
-            <td>{user.name}</td>
+          <tr key={user.id}>
+            <td>
+              <Link to={"/profile?profileId=" + user.id}>{user.name}</Link>
+            </td>
             <td>{user.description}</td>
             <td>{user.email}</td>
             <td>{user.likeCount}</td>

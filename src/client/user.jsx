@@ -21,7 +21,7 @@ class User extends Component {
       response = await fetch(url);
       payload = await response.json();
     } catch (err) {
-      console.log("ERROR FETCHING MENU DATA");
+      console.log("Error fetching users");
       this.setState({ users: null });
 
       return;

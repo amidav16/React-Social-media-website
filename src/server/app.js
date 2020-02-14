@@ -8,9 +8,25 @@ const app = express();
 //to handle JSON payloads
 app.use(bodyParser.json());
 
-//get method
+//get user method
 app.get("/api/users", (req, res) => {
-  res.send(profileData.getData());
+  res.json(profileData.getData());
+});
+
+//get specific user method
+app.get("/api/users/:id?", (req, res) => {
+  const profile = profileData.getUser(req.params.id);
+
+  if (profile === undefined || book === null) {
+    res.status(404);
+    res.send();
+  }
+  res.json(profile);
+});
+
+app.all("/api*", (req, res) => {
+  res.status(404);
+  res.send();
 });
 
 app.use(express.static("public"));
