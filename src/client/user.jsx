@@ -1,20 +1,20 @@
 //make this component take in all components to make the menu, while also handling most functions
 
 import React, { Component } from "react";
-import MenuTable from "./menuTable.jsx";
+import UserTable from "./usertable.jsx";
 
-class Menu extends Component {
+class User extends Component {
   state = {
-    menus: []
+    users: []
   };
 
   //get request to fill menu table
   componentDidMount() {
-    this.fetchMenu();
+    this.fetchUsers();
   }
 
-  async fetchMenu() {
-    const url = "/api/dishes";
+  async fetchUsers() {
+    const url = "/api/users";
     let response, payload;
 
     try {
@@ -22,37 +22,37 @@ class Menu extends Component {
       payload = await response.json();
     } catch (err) {
       console.log("ERROR FETCHING MENU DATA");
-      this.setState({ menus: null });
+      this.setState({ users: null });
 
       return;
     }
     if (response.status === 200) {
-      this.setState({ menus: payload });
+      this.setState({ users: payload });
     } else {
       console.log("Issue with http connection");
     }
   }
 
-  handleLike = menu => {
-    //we remake the menus state and just update it all
-    const item = [...this.state.menus];
-    const index = item.indexOf(menu);
+  handleLike = user => {
+    //we remake the users state and just update it all
+    const item = [...this.state.users];
+    const index = item.indexOf(user);
     item[index] = { ...item[index] };
     item[index].likeCount = item[index].likeCount + 1;
-    this.setState({ menus: item });
+    this.setState({ users: item });
   };
   render() {
-    const { length: count } = this.state.menus;
-    if (count === 0) return <p>There are no dishes in this weeks menu.</p>;
+    const { length: count } = this.state.users;
+    if (count === 0) return <p>There are currently no logged in users.</p>;
     return (
       <React.Fragment>
         <div>
-          <p>Showing {count} dishes in the menu.</p>
-          <MenuTable onLike={this.handleLike} items={this.state.menus} />
+          <p>Showing {count} logged in users.</p>
+          <UserTable onLike={this.handleLike} items={this.state.users} />
         </div>
       </React.Fragment>
     );
   }
 }
 
-export default Menu;
+export default User;

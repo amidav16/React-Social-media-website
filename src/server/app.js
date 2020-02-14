@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const menuData = require("./fakeMenuData");
+const profileData = require("./fakeProfileData");
 const path = require("path");
 
 const app = express();
@@ -9,8 +9,8 @@ const app = express();
 app.use(bodyParser.json());
 
 //get method
-app.get("/api/dishes", (req, res) => {
-  res.send(menuData.getData());
+app.get("/api/users", (req, res) => {
+  res.send(profileData.getData());
 });
 
 app.use(express.static("public"));

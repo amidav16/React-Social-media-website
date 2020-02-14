@@ -22,7 +22,7 @@ Starting from the root directory
 
 ### `Open a browser and enter localhost:8080`
 
-npm run dev will create a **bundle.js** file at the ./public folder
+npm run dev / yarn dev will create a **bundle.js** file at the ./public folder
 and starts a **single NodeJS instance serving both the frontend and backend** , at server port 8080.
 The application will also reload using nodemon everytime a change has been made.
 

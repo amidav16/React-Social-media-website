@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
-import NotFound from "./common/notfound.jsx";
-import Reservation from "./common/reservation.jsx";
+import NotFound from "./notfound.jsx";
 import HomePage from "./homepage.jsx";
 import Navbar from "./navbar.jsx";
-import Menu from "./menu.jsx";
-import Login from "./login.jsx";
-import Register from "./register.jsx";
+import Support from "./support.jsx";
+import Search from "./search.jsx";
+import Users from "./user.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../public/style.css";
 
@@ -19,11 +18,10 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route path="/home" component={HomePage} />
-            <Route path="/reservation" component={Reservation} />
+            <Route path="/support" component={Support} />
+            <Route path="/search" component={Search} />
             <Route path="/not-found" component={NotFound} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/menu" component={Menu} />
+            <Route path="/user" component={Users} />
             <Redirect from="/" exact to="/home" />
             <Redirect to="not-found" />
           </Switch>
