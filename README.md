@@ -1,4 +1,4 @@
-# Project title
+# React social-media website
 
 ## Summary
 
@@ -8,7 +8,7 @@ Note that there has been no tests done, therefore the ./tests folder will be emp
 The focus of this application is to show all the techniques i've learned through class and show my understanding towards them.
 Additionally i've utilized bootstrap's css to show my understanding of stylization, however i'm aware the course is not frontend focused.
 
-(Explain what project does, how it is structured and how i implemented it and which technologies i used, pitch sale)
+(Explain what project does, how it is structured and how i implemented it and which technologies i used, pitch sale) (EXPLAIN MY USE OF BABEL7)
 
 To get started start from the root folder and perform:
 
@@ -16,7 +16,7 @@ To get started start from the root folder and perform:
 
 Starting from the root directory
 
-### `npm install OR yarn install`
+### `npm install`
 
 ### `npm run dev OR yarn dev`
 
@@ -34,15 +34,15 @@ Below is a long list of requirements i have done:
 
 ### `DONE`
 
-Submitted as zip file
-Use one server
-Followed Folder layout
-Submitted Acceptable Zip file
-Provided Readme.md
-Not Skipped instruction in the document
-No Bugs?
-Home page accessible at http://localhost:8080
-Specifiy parts of exam that are not completed
+- Submitted as zip file
+- Use one server
+- Followed Folder layout
+- Submitted Acceptable Zip file
+- Provided Readme.md
+- Not Skipped instruction in the document
+- No Bugs
+- Home page accessible at http://localhost:8080
+- Specifiy parts of exam that are not completed
 
 ## Grade Requirements that HAVE and HAVE NOT been done:
 
@@ -50,23 +50,23 @@ Specifiy parts of exam that are not completed
 
 Necessary but not sufficient requirements to get at least a (E - D) Grade
 
-Write a home page with React
-At least 2 other React pages that can be accessed via React-Router
-At least one page should have some “state”, whose change should be triggerable from the GUI
-(i.e., there should be some actions for which a React component should be re-rendered and
-produce different HTML)
-Create a RESTful API handling at least one GET and one POST (besides the ones for authentication/authorization of users), using JSON.
-The frontend must use such API.
+- Write a home page with React
+- At least 2 other React pages that can be accessed via React-Router
+- At least one page should have some “state”, whose change should be triggerable from the GUI
+- (i.e., there should be some actions for which a React component should be re-rendered and
+- produce different HTML)
+- Create a RESTful API handling at least one GET and one POST (besides the ones for authentication/authorization of users), using JSON.
+  The frontend must use such API.
 
 ### `NOT DONE`
 
 Necessary but not sufficient requirements to get at least a C:
 
-You need to handle authentication/authorization, e.g., session-based via cookies: No
+- You need to handle authentication/authorization, e.g., session-based via cookies: NOT DONE
 
 Necessary but not sufficient requirements to get at least a B:
 
-Add WebSockets to your app, with the frontend using it: No
+- Add WebSockets to your app, with the frontend using it: NOT DONE
 
 ## Application Requirements Done/Not Done:
 
