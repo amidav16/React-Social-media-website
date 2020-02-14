@@ -15,8 +15,7 @@ class Menu extends Component {
 
   async fetchMenu() {
     const url = "/api/dishes";
-    let response;
-    let payload;
+    let response, payload;
 
     try {
       response = await fetch(url);
@@ -34,9 +33,13 @@ class Menu extends Component {
     }
   }
 
-  handleLike = () => {
-    //not functinal for now
-    console.log("like pressed.");
+  handleLike = menu => {
+    //we remake the menus state and just update it all
+    const item = [...this.state.menus];
+    const index = item.indexOf(menu);
+    item[index] = { ...item[index] };
+    item[index].likeCount = item[index].likeCount + 1;
+    this.setState({ menus: item });
   };
   render() {
     const { length: count } = this.state.menus;
@@ -45,7 +48,7 @@ class Menu extends Component {
       <React.Fragment>
         <div>
           <p>Showing {count} dishes in the menu.</p>
-          <MenuTable LikeButton={this.handleLike} items={this.state.menus} />
+          <MenuTable onLike={this.handleLike} items={this.state.menus} />
         </div>
       </React.Fragment>
     );

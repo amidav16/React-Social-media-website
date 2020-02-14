@@ -1,12 +1,12 @@
 {
-  "name": "pg6301_200013",
+  "name": "pg6300_5001",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run watch:client\" \"npm run watch:server\"",
+    "dev": "concurrently \"yarn watch:client\" \"yarn watch:server\"",
     "watch:client": "webpack --watch --mode development",
     "watch:server": "nodemon src/server/server.js --watch src/server --watch public/bundle.js",
     "build": "webpack --mode production",

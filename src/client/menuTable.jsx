@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuTable = ({ LikeButton, items }) => {
+const MenuTable = ({ onLike, items, likeCount }) => {
   return (
     <table className="table">
       <thead>
@@ -9,6 +9,7 @@ const MenuTable = ({ LikeButton, items }) => {
           <th>Dish</th>
           <th>Price</th>
           <th>Description</th>
+          <th>Likes</th>
           <th />
         </tr>
       </thead>
@@ -19,11 +20,10 @@ const MenuTable = ({ LikeButton, items }) => {
             <td>{menu.title}</td>
             <td>{menu.price + "$"}</td>
             <td>{menu.description}</td>
+            <td>{menu.likeCount}</td>
             <td>
               <button
-                onClick={() => {
-                  LikeButton();
-                }}
+                onClick={() => onLike(menu)}
                 className="btn btn-primary btn-sm"
               >
                 Like
