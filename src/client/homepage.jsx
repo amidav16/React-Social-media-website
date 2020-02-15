@@ -3,7 +3,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <div className="container">
-      <h1>Social Media Website</h1>
+      <h1>Social Media Homepage</h1>
     </div>
   );
 };

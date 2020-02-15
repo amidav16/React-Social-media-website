@@ -58,7 +58,7 @@ class Profile extends Component {
     console.log("Add pressed");
   };
 
-  handleLike = user => {
+  handleLike = async user => {
     //same code from user.jsx
     const item = [...this.state.profile];
     const index = item.indexOf(user);

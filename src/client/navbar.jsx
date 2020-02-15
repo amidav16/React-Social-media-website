@@ -30,11 +30,6 @@ const NavBar = () => {
               Support
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/search">
-              Search
-            </NavLink>
-          </li>
         </ul>
       </div>
     </nav>

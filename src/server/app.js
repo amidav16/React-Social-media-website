@@ -30,7 +30,8 @@ app.post("/api/users", (req, res) => {
     dto.description,
     dto.status,
     dto.location,
-    dto.email
+    dto.email,
+    dto.likeCount
   );
 
   res.status(201); //created

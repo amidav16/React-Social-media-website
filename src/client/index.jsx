@@ -5,7 +5,6 @@ import NotFound from "./notfound.jsx";
 import HomePage from "./homepage.jsx";
 import Navbar from "./navbar.jsx";
 import Support from "./support.jsx";
-import Search from "./search.jsx";
 import Media from "./media.jsx";
 import Users from "./user.jsx";
 import Profile from "./profile.jsx";
@@ -22,7 +21,6 @@ class App extends Component {
           <Switch>
             <Route path="/home" component={HomePage} />
             <Route path="/support" component={Support} />
-            <Route path="/search" component={Search} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/user" component={Users} />
             <Route path="/media" component={Media} />

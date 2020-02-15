@@ -2,11 +2,14 @@
 
 import React, { Component } from "react";
 import UserTable from "./usertable.jsx";
+import SearchBar from "./searchbar.jsx";
 import { Link } from "react-router-dom";
 
 class User extends Component {
   state = {
-    users: []
+    users: [],
+    filter: [],
+    searchQuery: ""
   };
 
   //get request to fill menu table
@@ -35,16 +38,35 @@ class User extends Component {
   }
 
   handleLike = user => {
-    //we remake the users state and just update it all
+    //this could be used with a post request to update the actual value
     const item = [...this.state.users];
     const index = item.indexOf(user);
     item[index] = { ...item[index] };
     item[index].likeCount = item[index].likeCount + 1;
     this.setState({ users: item });
   };
+
+  handleSearchbarChange = query => {
+    this.setState({ searchQuery: query });
+  };
+
+  getSearchData = () => {
+    const { searchQuery, users: allUsers } = this.state;
+
+    let filter = allUsers;
+    if (searchQuery)
+      filter = allUsers.filter(user =>
+        user.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+      );
+
+    return { data: filter };
+  };
+
   render() {
     const { length: count } = this.state.users;
     if (count === 0) return <p>There are currently no logged in users.</p>;
+    const { data: filter } = this.getSearchData();
+
     return (
       <React.Fragment>
         <div>
@@ -54,8 +76,13 @@ class User extends Component {
             <Link to="/newuser">
               <button className="btn btn-primary btn-sm-3 p-2">New user</button>
             </Link>
+            <div className="p-3"></div>
+            <SearchBar
+              onChange={this.handleSearchbarChange}
+              value={this.state.searchQuery}
+            />
           </div>
-          <UserTable onLike={this.handleLike} items={this.state.users} />
+          <UserTable onLike={this.handleLike} items={filter} />
         </div>
       </React.Fragment>
     );

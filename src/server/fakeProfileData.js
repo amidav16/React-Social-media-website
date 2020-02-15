@@ -1,4 +1,5 @@
 //fake profile data
+let counter = 4;
 
 const data = [
   {
@@ -53,20 +54,21 @@ function getUser(data_id) {
 
 function createUser(name, surname, description, status, location, email) {
   //store it like this in case i want to edit existing users in the future
-  userid = Date.now();
+  let id = parseInt("" + counter);
+  counter++;
+
   const user = {
-    userid: userid,
+    id: id,
     name: name,
     surname: surname,
     description: description,
     status: status,
     location: location,
-    email: email
+    email: email,
+    likeCount: 0
   };
 
-  data.push(userid, user);
-
-  return userid;
+  data.push(user);
 }
 
 module.exports = { getData, getUser, createUser };
