@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // can add a homepage redirect button
 const NotFound = () => {

@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const profileData = require("./fakeProfileData");
+const mediaData = require("./fakeMediaData");
 const path = require("path");
 
 const app = express();
@@ -21,6 +22,7 @@ app.get("/api/users/:id", (req, res) => {
   res.send(profile);
 });
 
+//create user
 app.post("/api/users", (req, res) => {
   const dto = req.body;
 
@@ -31,8 +33,33 @@ app.post("/api/users", (req, res) => {
     dto.status,
     dto.location,
     dto.email,
-    dto.likeCount
+    dto.friends
   );
+  res.status(201); //created
+  res.header("location", "/api/users/" + id);
+  res.send();
+});
+
+//Media requests
+
+//get media method
+app.get("/api/media", (req, res) => {
+  res.json(mediaData.getMedia());
+});
+
+//get specific media user method
+app.get("/api/media/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const media = mediaData.getMediaUser(id);
+
+  res.send(media);
+});
+
+//create post in media
+app.post("/api/media", (req, res) => {
+  const dto = req.body;
+
+  const id = mediaData.createPost(dto.message);
 
   res.status(201); //created
   res.header("location", "/api/users/" + id);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UserTable = ({ onLike, items }) => {
+const UserTable = ({ items }) => {
   return (
     <table className="table">
       <thead>
@@ -9,7 +9,7 @@ const UserTable = ({ onLike, items }) => {
           <th>Name</th>
           <th>Bio</th>
           <th>Email</th>
-          <th>Likes</th>
+          <th>Friends</th>
           <th />
         </tr>
       </thead>
@@ -21,14 +21,9 @@ const UserTable = ({ onLike, items }) => {
             </td>
             <td>{user.description}</td>
             <td>{user.email}</td>
-            <td>{user.likeCount}</td>
+            <td>{user.friends}</td>
             <td>
-              <button
-                onClick={() => onLike(user)}
-                className="btn btn-primary btn-sm"
-              >
-                Like
-              </button>
+              <button className="btn btn-primary btn-sm ">Add Friend</button>
             </td>
           </tr>
         ))}

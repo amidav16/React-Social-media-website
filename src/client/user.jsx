@@ -37,15 +37,6 @@ class User extends Component {
     }
   }
 
-  handleLike = user => {
-    //this could be used with a post request to update the actual value
-    const item = [...this.state.users];
-    const index = item.indexOf(user);
-    item[index] = { ...item[index] };
-    item[index].likeCount = item[index].likeCount + 1;
-    this.setState({ users: item });
-  };
-
   handleSearchbarChange = query => {
     this.setState({ searchQuery: query });
   };
@@ -82,7 +73,7 @@ class User extends Component {
               value={this.state.searchQuery}
             />
           </div>
-          <UserTable onLike={this.handleLike} items={filter} />
+          <UserTable items={filter} />
         </div>
       </React.Fragment>
     );

@@ -10,7 +10,7 @@ const data = [
     status: "Single",
     location: "New Zealand",
     email: "BobDyllanIsAwesome@gmail.com",
-    likeCount: 2
+    friends: 2
   },
   {
     id: 1,
@@ -20,7 +20,7 @@ const data = [
     status: "It's Complicated.",
     location: "Norway",
     email: "SteveEngland@hotmail.com",
-    likeCount: 12
+    friends: 12
   },
   {
     id: 2,
@@ -30,17 +30,17 @@ const data = [
     status: "Married",
     location: "Sweden",
     email: "Pewdiepie@gmail.com",
-    likeCount: 71
+    friends: 71
   },
   {
     id: 3,
     name: "Dinkleberg",
     surname: "Stevenson",
-    description: "Please like my profile!",
+    description: "Please add me on my profile!",
     status: "Single",
     location: "Germany",
     email: "DinkDonk@yahoo.com",
-    likeCount: 0
+    friends: 0
   }
 ];
 
@@ -65,7 +65,7 @@ function createUser(name, surname, description, status, location, email) {
     status: status,
     location: location,
     email: email,
-    likeCount: 0
+    friends: 0
   };
 
   data.push(user);

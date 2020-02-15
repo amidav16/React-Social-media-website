@@ -58,22 +58,12 @@ class Profile extends Component {
     console.log("Add pressed");
   };
 
-  handleLike = async user => {
-    //same code from user.jsx
-    const item = [...this.state.profile];
-    const index = item.indexOf(user);
-    item[index] = { ...item[index] };
-    item[index].likeCount = item[index].likeCount + 1;
-    this.setState({ profile: item });
-  };
-
   render() {
     return (
       <div>
         <h1>Profile</h1>
         <ProfileTable
           onAdd={this.handleAdd}
-          onLike={this.handleLike}
           profile={this.state.profile}
         ></ProfileTable>
       </div>

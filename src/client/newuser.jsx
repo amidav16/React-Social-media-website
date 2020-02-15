@@ -9,7 +9,7 @@ class NewUser extends Component {
     status: "",
     location: "",
     email: "",
-    likeCount: 0,
+    friends: 0,
     id: 3
   };
 
@@ -37,7 +37,7 @@ class NewUser extends Component {
     } catch (err) {
       return false;
     }
-
+    this.props.history.push("/user");
     return response.status === 201;
   };
 
