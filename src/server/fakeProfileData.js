@@ -2,7 +2,7 @@
 
 const data = [
   {
-    id: 1,
+    id: 0,
     name: "Bob",
     surname: "Dyllan",
     description: "Hello Friends",
@@ -12,7 +12,7 @@ const data = [
     likeCount: 2
   },
   {
-    id: 2,
+    id: 1,
     name: "Steve",
     surname: "England",
     description: "Your favorite scapegoat",
@@ -22,7 +22,7 @@ const data = [
     likeCount: 12
   },
   {
-    id: 3,
+    id: 2,
     name: "Felix",
     surname: "Kjellberg",
     description: "Watch my videoes at youtube.com/pewdiepie",
@@ -32,7 +32,7 @@ const data = [
     likeCount: 71
   },
   {
-    id: 4,
+    id: 3,
     name: "Dinkleberg",
     surname: "Stevenson",
     description: "Please like my profile!",
@@ -47,8 +47,26 @@ function getData() {
   return data;
 }
 
-function getUser(id_) {
-  return data.find(m => m.id === id_);
+function getUser(data_id) {
+  return data.find(profile => profile.id === data_id);
 }
 
-module.exports = { getData, getUser };
+function createUser(name, surname, description, status, location, email) {
+  //store it like this in case i want to edit existing users in the future
+  userid = Date.now();
+  const user = {
+    userid: userid,
+    name: name,
+    surname: surname,
+    description: description,
+    status: status,
+    location: location,
+    email: email
+  };
+
+  data.push(userid, user);
+
+  return userid;
+}
+
+module.exports = { getData, getUser, createUser };

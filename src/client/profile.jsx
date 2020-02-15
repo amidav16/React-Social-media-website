@@ -22,7 +22,7 @@ class Profile extends Component {
     if (this.state.error === null) this.fetchUser();
   }
 
-  //get specific user
+  //get specific profile
   async fetchUser() {
     const url = "/api/users/" + this.profileId;
     console.log(url);
@@ -58,13 +58,23 @@ class Profile extends Component {
     console.log("Add pressed");
   };
 
+  handleLike = user => {
+    //same code from user.jsx
+    const item = [...this.state.profile];
+    const index = item.indexOf(user);
+    item[index] = { ...item[index] };
+    item[index].likeCount = item[index].likeCount + 1;
+    this.setState({ profile: item });
+  };
+
   render() {
     return (
       <div>
         <h1>Profile</h1>
         <ProfileTable
           onAdd={this.handleAdd}
-          items={this.state.profile}
+          onLike={this.handleLike}
+          profile={this.state.profile}
         ></ProfileTable>
       </div>
     );

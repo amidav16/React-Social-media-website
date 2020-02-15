@@ -6,8 +6,10 @@ import HomePage from "./homepage.jsx";
 import Navbar from "./navbar.jsx";
 import Support from "./support.jsx";
 import Search from "./search.jsx";
+import Media from "./media.jsx";
 import Users from "./user.jsx";
 import Profile from "./profile.jsx";
+import NewUser from "./newuser.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../public/style.css";
 
@@ -23,6 +25,8 @@ class App extends Component {
             <Route path="/search" component={Search} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/user" component={Users} />
+            <Route path="/media" component={Media} />
+            <Route path="/newuser" component={NewUser} />
             <Route path="/profile" component={Profile} />
             <Redirect from="/" exact to="/home" />
             <Redirect to="not-found" />

@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import UserTable from "./usertable.jsx";
+import { Link } from "react-router-dom";
 
 class User extends Component {
   state = {
@@ -47,7 +48,13 @@ class User extends Component {
     return (
       <React.Fragment>
         <div>
-          <p>Showing {count} logged in users.</p>
+          <div className="row">
+            <p className="p-2">Showing {count} logged in users </p>
+            <div className="p-2"></div>
+            <Link to="/newuser">
+              <button className="btn btn-primary btn-sm-3 p-2">New user</button>
+            </Link>
+          </div>
           <UserTable onLike={this.handleLike} items={this.state.users} />
         </div>
       </React.Fragment>

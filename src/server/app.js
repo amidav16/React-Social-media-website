@@ -14,14 +14,28 @@ app.get("/api/users", (req, res) => {
 });
 
 //get specific user method
-app.get("/api/users/:id?", (req, res) => {
-  const profile = profileData.getUser(req.params.id);
+app.get("/api/users/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const profile = profileData.getUser(id);
 
-  if (profile === undefined || book === null) {
-    res.status(404);
-    res.send();
-  }
-  res.json(profile);
+  res.send(profile);
+});
+
+app.post("/api/users", (req, res) => {
+  const dto = req.body;
+
+  const id = profileData.createUser(
+    dto.name,
+    dto.surname,
+    dto.description,
+    dto.status,
+    dto.location,
+    dto.email
+  );
+
+  res.status(201); //created
+  res.header("location", "/api/users/" + id);
+  res.send();
 });
 
 app.all("/api*", (req, res) => {
