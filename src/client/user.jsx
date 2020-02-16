@@ -17,6 +17,8 @@ class User extends Component {
     this.fetchUsers();
   }
 
+  //i did not make this code, it has been re-used from the main repository of the course:
+  //https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/edit.jsx
   async fetchUsers() {
     const url = "/api/users";
     let response, payload;

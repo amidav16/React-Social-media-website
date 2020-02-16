@@ -25,7 +25,8 @@ class NewUser extends Component {
     let response;
 
     console.log(this.state);
-
+    //i did not make this code, it has been re-used from the main repository of the course:
+    //https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/create.jsx
     try {
       response = await fetch(url, {
         method: "post",

@@ -8,8 +8,13 @@ Note that there has been no tests done, therefore the ./tests folder will be emp
 The focus of this application is to show all the techniques i've learned through class and show my understanding towards them.
 Additionally i've utilized bootstrap's css to show my understanding of stylization, however i'm aware the course is not frontend focused.
 
-(Explain what project does, how it is structured and how i implemented it and which technologies i used, pitch sale) (EXPLAIN MY USE OF BABEL7)
-This project creates a social media website, it's structured in which we have 5 react routes, using navbar. When navigated to Users you can see a list of users and by pressing their names you can check their displayed information in a different page, there's also a friendship request button however it isn't functional. I used React-Router-dom for the navigation.
+This project creates a social media website, it's structured in which we have 4 react routes, using navbar. When navigated to Users you can see a list of users obtained from a GET request and by pressing their names you can check their displayed information in a different page, there's also a friendship request button however it isn't functional. Here you can create additional users using a POST request, I used React-Router-dom for the routing navigation.
+
+Inn Media we have something quite similar to users, however with different data, i also reversed the array so posts will display in a chronological order. pressing create post prompts the user to enter a message also using a POST request, and will push that data to the beginning of the array so the post is displayed first.
+
+All users names are clickable, clicking on their names will bring up additional information about the user, while also displaying the media timeline. I attempted to filter the user posts to only show their posts, however i couldn't figure it out.
+
+Also note that i have used babel7, to show my understanding of webpack and bundle.js and how they work with a project like this.
 
 To get started start from the root folder and perform:
 
@@ -27,7 +32,7 @@ npm run dev / yarn dev will create a **bundle.js** file at the ./public folder
 and starts a **single NodeJS instance serving both the frontend and backend** , at server port 8080.
 The application will also reload using nodemon everytime a change has been made.
 
-Small parts of this code has been used to achieve the functions: (GITHUB LINKS IF THERE IS ANY)?
+Note that i did not make all of the code, it has been re-used from the main repository of the course.
 
 Below is a long list of requirements i have done:
 
@@ -36,9 +41,9 @@ Below is a long list of requirements i have done:
 ### `DONE`
 
 - Submitted as zip file
-- Use one server
+- Submitted small zip file (less than 10mb)
+- Use single NodeJs instance serving both the frontend and backend
 - Followed Folder layout
-- Submitted Acceptable Zip file
 - Provided Readme.md
 - Not Skipped instruction in the document
 - No Bugs
@@ -76,13 +81,13 @@ Necessary but not sufficient requirements to get at least a B:
 1. When the application starts, you must have some existing fake/test data representing valid users.
 2. Should be possible to register new users.
 3. Each user should have a page displaying his/her information (e.g, name, surname, date of birth and location).
-4. A user should be able to post new messages on his/her "timeline", which should be displayed in chronological order together in the same page with the user's info.
-5. Should be possible to search for existing users.
+4. Should be possible to search for existing users.
 
 ### `NOT DONE`
 
-6. Users can send "friendship requests to other users. This latter will decide wheter to accept it or not.
-7. Two friends can see each other timeline / user-details, but not the ones of the other users they are not friends with.
-8. The home of a user will be the merged timeline of all of his/her friends, in chronological order, updated in real-time (e.g, Using Websockets).
-9. Should have a live-chat (using WebSockets) for friends.
-10. When a message contains a URL (e.g, a link to an externalø web page), that should be displayed as an actual clickable link. Pay particular attention to the security aspects of such funcitonality.
+4. A user should be able to post new messages on his/her "timeline", which should be displayed in chronological order together in the same page with the user's info.
+5. Users can send "friendship requests to other users. This latter will decide wheter to accept it or not.
+6. Two friends can see each other timeline / user-details, but not the ones of the other users they are not friends with.
+7. The home of a user will be the merged timeline of all of his/her friends, in chronological order, updated in real-time (e.g, Using Websockets).
+8. Should have a live-chat (using WebSockets) for friends.
+9. When a message contains a URL (e.g, a link to an externalø web page), that should be displayed as an actual clickable link. Pay particular attention to the security aspects of such funcitonality.

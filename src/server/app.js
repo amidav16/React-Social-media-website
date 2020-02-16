@@ -1,3 +1,6 @@
+//i did not make this code, it has been re-used from the main repository of the course:
+//https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/server/app.js
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const profileData = require("./fakeProfileData");

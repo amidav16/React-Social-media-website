@@ -43,7 +43,7 @@ function getMedia() {
 }
 
 function getMediaUser(data_id) {
-  return mediaTimeline.find(profile => profile.id === data_id);
+  return mediaTimeline.find(profile => profile.user_id === data_id);
 }
 
 function createPost(message) {

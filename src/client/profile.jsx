@@ -7,12 +7,11 @@ class Profile extends Component {
     super(props);
     this.state = {
       profile: [],
-      filter: [],
       media: [],
       error: null
     };
 
-    //code taken lesson 7
+    //i did not make this code, it has been re-used from the main repository of the course:
     //https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/edit.jsx
     this.profileId = new URLSearchParams(window.location.search).get(
       "profileId"
@@ -22,7 +21,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    if (this.state.error === null) this.fetchUser();
+    this.fetchUser();
     this.fetchMedia();
   }
 
@@ -56,7 +55,7 @@ class Profile extends Component {
     }
   }
 
-  //get specific media
+  //get media
   async fetchMedia() {
     const url = "/api/media";
     let response, payload;
@@ -100,18 +99,8 @@ class Profile extends Component {
     this.setState({ media: item });
   };
 
-  getPostData = () => {
-    const { media: allMedia } = this.state;
-    let filter = allMedia;
-    if (this.profileId)
-      filter = allMedia.filter(user =>
-        user.namee.toLowerCase().startsWith(this.profileId)
-      );
-    return { data: filter };
-  };
-
   render() {
-    const { data: filter } = this.getPostData();
+    console.log(this.state.media);
     return (
       <div>
         <h1>Profile</h1>
@@ -119,7 +108,10 @@ class Profile extends Component {
           onAdd={this.handleAdd}
           profile={this.state.profile}
         ></ProfileTable>
-        <MediaTable onLike={this.handleLike} items={filter}></MediaTable>
+        <MediaTable
+          onLike={this.handleLike}
+          items={this.state.media}
+        ></MediaTable>
       </div>
     );
   }
