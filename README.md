@@ -90,4 +90,4 @@ Necessary but not sufficient requirements to get at least a B:
 - Two friends can see each other timeline / user-details, but not the ones of the other users they are not friends with.
 - The home of a user will be the merged timeline of all of his/her friends, in chronological order, updated in real-time (e.g, Using Websockets).
 - Should have a live-chat (using WebSockets) for friends.
-- When a message contains a URL (e.g, a link to an externalø web page), that should be displayed as an actual clickable link. Pay particular attention to the security aspects of such funcitonality.
+- When a message contains a URL (e.g, a link to an external web page), that should be displayed as an actual clickable link. Pay particular attention to the security aspects of such funcitonality.
