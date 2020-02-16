@@ -1,5 +1,5 @@
 //fake profile data
-let counter = 4;
+let counter = 5;
 
 const data = [
   {
@@ -41,11 +41,21 @@ const data = [
     location: "Germany",
     email: "DinkDonk@yahoo.com",
     friends: 0
+  },
+  {
+    id: 2,
+    name: "You",
+    surname: "Surname",
+    description: "Hey it's me!",
+    status: "Single",
+    location: "norway",
+    email: "you",
+    friends: 0
   }
 ];
 
 function getData() {
-  return data;
+  return data.reverse();
 }
 
 function getUser(data_id) {

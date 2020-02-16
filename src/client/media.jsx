@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MediaTable from "./mediatable.jsx";
+import { Link } from "react-router-dom";
 
 class Media extends Component {
   constructor(props) {
@@ -16,12 +17,13 @@ class Media extends Component {
   }
 
   componentDidMount() {
-    if (this.state.error === null) this.fetchMedia();
+    this.fetchMedia();
+    this.setState({ media: this.state.media.reverse() });
   }
 
   //get specific media
   async fetchMedia() {
-    const url = "/api/media/" + this.profileId;
+    const url = "/api/media";
     console.log(url);
     let response, payload;
 
@@ -48,23 +50,26 @@ class Media extends Component {
         media: null
       });
     }
-
-    handleLike = user => {
-      //this could be used with a post request to update the actual value
-      const item = [...this.state.media];
-      const index = item.indexOf(user);
-      item[index] = { ...item[index] };
-      item[index].likeCount = item[index].likeCount + 1;
-      this.setState({ media: item });
-    };
   }
+
+  handleLike = user => {
+    //this could be used with a post request to update the actual value
+    const item = [...this.state.media];
+    const index = item.indexOf(user);
+    item[index] = { ...item[index] };
+    item[index].likeCount = item[index].likeCount + 1;
+    this.setState({ media: item });
+  };
 
   render() {
     return (
       <div>
         <h1>Media</h1>
+        <Link to="/newpost">
+          <button className="btn btn-primary btn-sm-3 p-2">Create post</button>
+        </Link>
         <MediaTable
-          onlike={this.handleLike}
+          onLike={this.handleLike}
           items={this.state.media}
         ></MediaTable>
       </div>

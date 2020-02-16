@@ -9,6 +9,7 @@ import Media from "./media.jsx";
 import Users from "./user.jsx";
 import Profile from "./profile.jsx";
 import NewUser from "./newuser.jsx";
+import NewPost from "./newpost.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../public/style.css";
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/user" component={Users} />
             <Route path="/media" component={Media} />
             <Route path="/newuser" component={NewUser} />
+            <Route path="/newpost" component={NewPost} />
             <Route path="/profile" component={Profile} />
             <Redirect from="/" exact to="/home" />
             <Redirect to="not-found" />

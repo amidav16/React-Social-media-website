@@ -33,15 +33,15 @@ const ProfileTable = ({ onAdd, profile }) => {
             </li>
           </td>
           <td>
-            <button
-              onClick={() => onAdd()}
-              className="btn btn-primary btn-sm m-2"
-            >
+            <button onClick={() => onAdd()} className="btn btn-primary btn-sm">
               Add Friend
             </button>
 
+            <Link to="/media">
+              <button className="btn btn-primary btn-sm m-2">Media</button>
+            </Link>
             <Link to="/user">
-              <button className="btn btn-primary btn-sm">Back</button>
+              <button className="btn btn-primary btn-sm">Users</button>
             </Link>
           </td>
         </tr>
