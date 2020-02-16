@@ -43,7 +43,7 @@ const data = [
     friends: 0
   },
   {
-    id: 2,
+    id: 4,
     name: "You",
     surname: "Surname",
     description: "Hey it's me!",
@@ -55,7 +55,7 @@ const data = [
 ];
 
 function getData() {
-  return data.reverse();
+  return data;
 }
 
 function getUser(data_id) {
@@ -63,7 +63,7 @@ function getUser(data_id) {
 }
 
 function createUser(name, surname, description, status, location, email) {
-  //store it like this in case i want to edit existing users in the future
+  //store it like this in case i want to edit existing data in the future
   let id = parseInt("" + counter);
   counter++;
 

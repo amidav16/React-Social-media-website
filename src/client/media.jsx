@@ -18,7 +18,6 @@ class Media extends Component {
 
   componentDidMount() {
     this.fetchMedia();
-    this.setState({ media: this.state.media.reverse() });
   }
 
   //get specific media

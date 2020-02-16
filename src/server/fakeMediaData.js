@@ -36,12 +36,14 @@ const data = [
   }
 ];
 
+const mediaTimeline = data.reverse();
+
 function getMedia() {
-  return data;
+  return mediaTimeline;
 }
 
 function getMediaUser(data_id) {
-  return data.find(profile => profile.id === data_id);
+  return mediaTimeline.find(profile => profile.id === data_id);
 }
 
 function createPost(message) {
@@ -58,7 +60,7 @@ function createPost(message) {
     likeCount: 0
   };
 
-  data.push(media);
+  mediaTimeline.unshift(media);
 }
 
 module.exports = { getMedia, getMediaUser, createPost };

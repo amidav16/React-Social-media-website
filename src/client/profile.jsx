@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import ProfileTable from "./profiletable.jsx";
+import MediaTable from "./mediatable.jsx";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       profile: [],
+      filter: [],
+      media: [],
       error: null
     };
 
@@ -20,12 +23,12 @@ class Profile extends Component {
 
   componentDidMount() {
     if (this.state.error === null) this.fetchUser();
+    this.fetchMedia();
   }
 
   //get specific profile
   async fetchUser() {
     const url = "/api/users/" + this.profileId;
-    console.log(url);
     let response, payload;
 
     try {
@@ -53,12 +56,62 @@ class Profile extends Component {
     }
   }
 
+  //get specific media
+  async fetchMedia() {
+    const url = "/api/media";
+    let response, payload;
+
+    try {
+      response = await fetch(url);
+      payload = await response.json();
+    } catch (err) {
+      //Network error: eg, wrong URL, no internet, etc.
+      this.setState({
+        error: "ERROR when retrieving media: " + err,
+        media: null
+      });
+      return;
+    }
+
+    if (response.status === 200) {
+      this.setState({
+        error: null,
+        media: payload
+      });
+    } else {
+      this.setState({
+        error: "Issue with HTTP connection: status code " + response.status,
+        media: null
+      });
+    }
+  }
+
   handleAdd = () => {
     // do nothing for now
     console.log("Add pressed");
   };
 
+  handleLike = user => {
+    //this could be used with a post request to update the actual value
+    const item = [...this.state.media];
+    const index = item.indexOf(user);
+    item[index] = { ...item[index] };
+    item[index].likeCount = item[index].likeCount + 1;
+    this.setState({ media: item });
+  };
+
+  getPostData = () => {
+    const { media: allMedia } = this.state;
+    let filter = allMedia;
+    if (this.profileId)
+      filter = allMedia.filter(user =>
+        user.namee.toLowerCase().startsWith(this.profileId)
+      );
+    return { data: filter };
+  };
+
   render() {
+    const { data: filter } = this.getPostData();
     return (
       <div>
         <h1>Profile</h1>
@@ -66,6 +119,7 @@ class Profile extends Component {
           onAdd={this.handleAdd}
           profile={this.state.profile}
         ></ProfileTable>
+        <MediaTable onLike={this.handleLike} items={filter}></MediaTable>
       </div>
     );
   }
