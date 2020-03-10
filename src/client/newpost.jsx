@@ -59,7 +59,7 @@ class NewPost extends Component {
             <button className="btn btn-primary btn-sm m-2" type="submit">
               Post
             </button>
-            <Link to="/user">
+            <Link to="/media">
               <button className="btn btn-primary btn-sm m-2">Cancel</button>
             </Link>
           </div>

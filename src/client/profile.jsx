@@ -8,6 +8,7 @@ class Profile extends Component {
     this.state = {
       profile: [],
       media: [],
+      filter: [],
       error: null
     };
 
@@ -99,8 +100,22 @@ class Profile extends Component {
     this.setState({ media: item });
   };
 
+  getUserPosts = () => {
+    const { media: allMedia } = this.state;
+
+    let filter = allMedia;
+    //need to make user_id a string to compare with profileId
+    if (filter)
+      filter = allMedia.filter(media =>
+        media.user_id.toString().startsWith(this.profileId)
+      );
+
+    return { data: filter };
+  };
+
   render() {
     console.log(this.state.media);
+    const { data: filter } = this.getUserPosts();
     return (
       <div>
         <h1>Profile</h1>
@@ -108,10 +123,7 @@ class Profile extends Component {
           onAdd={this.handleAdd}
           profile={this.state.profile}
         ></ProfileTable>
-        <MediaTable
-          onLike={this.handleLike}
-          items={this.state.media}
-        ></MediaTable>
+        <MediaTable onLike={this.handleLike} items={filter}></MediaTable>
       </div>
     );
   }

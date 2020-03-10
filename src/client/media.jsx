@@ -65,9 +65,9 @@ class Media extends Component {
   render() {
     return (
       <div>
-        <h1>Media</h1>
+        <h1 className="container">Media</h1>
         <Link to="/newpost">
-          <button className="btn btn-primary btn-sm-3 p-2">Create post</button>
+          <button className="btn btn-primary btn-sm-3 m-3">Create post</button>
         </Link>
         <MediaTable
           onLike={this.handleLike}
