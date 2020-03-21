@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import MediaTable from "./mediatable.jsx";
 import { Link } from "react-router-dom";
+import Rest from "./common/rest.jsx";
 
-class Media extends Component {
+class Media extends Rest {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,36 +22,6 @@ class Media extends Component {
 
   componentDidMount() {
     this.fetchMedia();
-  }
-
-  //get media
-  async fetchMedia() {
-    const url = "/api/media";
-    let response, payload;
-
-    try {
-      response = await fetch(url);
-      payload = await response.json();
-    } catch (err) {
-      //Network error: eg, wrong URL, no internet, etc.
-      this.setState({
-        error: "ERROR when retrieving media: " + err,
-        media: null
-      });
-      return;
-    }
-
-    if (response.status === 200) {
-      this.setState({
-        error: null,
-        media: payload
-      });
-    } else {
-      this.setState({
-        error: "Issue with HTTP connection: status code " + response.status,
-        media: null
-      });
-    }
   }
 
   handleLike = user => {

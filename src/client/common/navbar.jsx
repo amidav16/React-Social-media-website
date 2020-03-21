@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    //found using: https://getbootstrap.com/docs/4.0/components/navbar/
+    //https://getbootstrap.com/docs/4.0/components/navbar/
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
         Social Media

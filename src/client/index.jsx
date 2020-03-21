@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
-import NotFound from "./notfound.jsx";
-import HomePage from "./homepage.jsx";
-import Navbar from "./navbar.jsx";
-import Support from "./support.jsx";
+import NotFound from "./common/notfound.jsx";
+import HomePage from "./common/homepage.jsx";
+import Navbar from "./common/navbar.jsx";
+import Support from "./common/support.jsx";
 import Media from "./media.jsx";
 import Users from "./user.jsx";
 import Profile from "./profile.jsx";

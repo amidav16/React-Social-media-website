@@ -2,10 +2,11 @@
 
 import React, { Component } from "react";
 import UserTable from "./usertable.jsx";
-import SearchBar from "./searchbar.jsx";
+import SearchBar from "./common/searchbar.jsx";
 import { Link } from "react-router-dom";
+import Rest from "./common/rest.jsx";
 
-class User extends Component {
+class User extends Rest {
   state = {
     users: [],
     filter: [],
@@ -15,28 +16,6 @@ class User extends Component {
   //get request to fill menu table
   componentDidMount() {
     this.fetchUsers();
-  }
-
-  //i did not make this code, it has been re-used from the main repository of the course:
-  //https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/edit.jsx
-  async fetchUsers() {
-    const url = "/api/users";
-    let response, payload;
-
-    try {
-      response = await fetch(url);
-      payload = await response.json();
-    } catch (err) {
-      console.log("Error fetching users");
-      this.setState({ users: null });
-
-      return;
-    }
-    if (response.status === 200) {
-      this.setState({ users: payload });
-    } else {
-      console.log("Issue with http connection");
-    }
   }
 
   handleSearchbarChange = query => {

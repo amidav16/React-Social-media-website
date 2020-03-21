@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Rest from "./common/rest.jsx";
 import { Link } from "react-router-dom";
 
 class NewUser extends Component {
@@ -18,34 +19,11 @@ class NewUser extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  submitHandler = async e => {
-    e.preventDefault();
-    const url = "/api/users";
-    const payload = this.state;
-    let response;
-
-    console.log(this.state);
-    //i did not make this code, it has been re-used from the main repository of the course:
-    //https://github.com/arcuri82/web_development_and_api_design/blob/master/les07/server_client_together/src/client/create.jsx
-    try {
-      response = await fetch(url, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-    } catch (err) {
-      return false;
-    }
-    this.props.history.push("/user");
-    return response.status === 201;
-  };
-
   render() {
     const { name, surname, description, status, location, email } = this.state;
 
     return (
+      //could refactor to look less messy
       <div>
         <h2>Create a new user</h2>
         <form onSubmit={this.submitHandler}>
