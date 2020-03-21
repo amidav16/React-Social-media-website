@@ -10,6 +10,8 @@ import Users from "./user.jsx";
 import Profile from "./profile.jsx";
 import NewUser from "./newuser.jsx";
 import NewPost from "./newpost.jsx";
+import Register from "./register.jsx";
+import Login from "./login.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../public/style.css";
 
@@ -28,6 +30,8 @@ class App extends Component {
             <Route path="/newuser" component={NewUser} />
             <Route path="/newpost" component={NewPost} />
             <Route path="/profile" component={Profile} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
             <Redirect from="/" exact to="/home" />
             <Redirect to="not-found" />
           </Switch>
